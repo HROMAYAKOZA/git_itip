@@ -1,0 +1,20 @@
+import random
+mylist=['Электроника', 'Одежда', 'Еда', 'Напитки', 'Книги', 'Хозтовары', 'Мебель']
+list1 = ['Ноутбук', 'Микроволновка', 'Смартфон', 'Оперативная память','Видеокарта']
+list2 = ['Кроссовки','Майка','Штаны','Куртка','Носки']
+list3 = ['Рис','Макароны','Пельмени','Котлеты']
+list4 = ['Сок','Газировка','Вода']
+list5 = ['Война и мир', 'Гены гения','Искусство программирования','Чистый код']
+list6 = ['Мыло', 'Салфетки', 'Швабра','Стиральный порошок']
+list7 = ['Диван','Стол','Стул','Табуретка']
+namelist=[list1,list2,list3,list4,list5,list6,list7]
+countlist=[[1 for i in range(5)],[1 for i in range(5)],[1 for i in range(4)],[1 for i in range(3)],[1 for i in range(4)],[1 for i in range(4)],[1 for i in range(4)]]
+s=""
+for i in range(1,1001):
+    s+=str(i)+","
+    t = random.randint(0,6)
+    q=random.randint(0,len(namelist[t])-1)
+    s+=namelist[t][q]+" " +str(countlist[t][q])+","
+    countlist[t][q]+=1
+    s+=mylist[t]+','+str(random.randint(1000,99999))+"\n"
+print(s)
